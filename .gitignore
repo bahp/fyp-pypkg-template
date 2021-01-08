@@ -1,3 +1,20 @@
+# -------------------------------------------------
+# Own ammendments
+# -------------------------------------------------
+# MAC hidden files
+**/*.DS_Store
+
+# Temporal excel files
+**/~*
+
+# Log files
+**/*.log
+
+# PyCharm folder
+.idea
+
+# -------------------------------------------------
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
