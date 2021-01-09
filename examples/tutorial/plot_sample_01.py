@@ -1,5 +1,5 @@
 """
-Plotting a gaussian
+Plotting a gaussian (script)
 ============================
 
 Example ``matplotlib`` to plot a gaussian.

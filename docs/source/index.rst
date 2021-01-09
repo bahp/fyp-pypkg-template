@@ -1,8 +1,3 @@
-.. fyp2020-oss1017 documentation master file, created by
-   sphinx-quickstart on Wed Jan  6 13:18:51 2021.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
 Welcome to fyp2020-username's documentation!
 ============================================
 
@@ -23,7 +18,7 @@ Welcome to fyp2020-username's documentation!
    :caption: Example Galleries
    :hidden:
 
-   _examples/tsne/index
+   _examples/tutorial/index
 
 Indices and tables
 ==================
