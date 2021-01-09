@@ -4,8 +4,13 @@
 # MAC hidden files
 **/*.DS_Store
 
-# Temporal excel files
+# Temporal files
 **/~*
+
+# Data files
+**/.csv
+**/.xlsx
+**/.xls
 
 # Log files
 **/*.log
