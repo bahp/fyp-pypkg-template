@@ -1,9 +1,9 @@
 
 # fyp-package-template
 
-[url-documentation]: https://<github_username>.github.io/<repository_name>/index.html
-[url-installation]: https://<github_username>.github.io/<repository_name>/index.html
-[url-development]: https://<github_username>.github.io/<repository_name>/index.html
+[url-documentation]: https://bahp.github.io/fyp-pypkg-template/
+[url-installation]: https://bahp.github.io/fyp-pypkg-template/
+[url-development]: https://bahp.github.io/fyp-pypkg-template/
 
 Community | [Documentation][url-documentation] | Resources | Contributors | Release Notes
 
