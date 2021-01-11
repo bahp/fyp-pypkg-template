@@ -3,9 +3,9 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Tutorial &mdash; fyp2020-username 0.0.1 documentation</title>
   
@@ -20,7 +20,10 @@
 
   
   
+
   
+  
+
   
 
   
@@ -54,7 +57,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> fyp2020-username
+            <a href="../index.html" class="icon icon-home"> fyp2020-username
           
 
           
@@ -141,6 +144,8 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -152,7 +157,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../_sources/tutorials/setup.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -173,7 +178,8 @@
 <p>A virtual environment is a tool that helps to keep dependencies required by
 different projects separate by creating isolated python virtual environments
 for them. This is one of the most important tools that Python developers use.</p>
-<p>In recent versions of python we can use venv</p>
+<p>In recent versions of python (&gt;3) we can use venv. If you have various
+versions of python you might need to use python3 or py instead.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">venv</span>           <span class="c1"># Install venv</span>
 <span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">venv</span> <span class="o">&lt;</span><span class="n">environment</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;</span>    <span class="c1"># Create environment</span>
 </pre></div>
@@ -270,12 +276,14 @@ You can find an example in <code class="docutils literal notranslate"><span clas
 (actually *.pth files) into the python installation to your code,
 so that your package is installed, but any changes will immediately take effect.
 This way all your can import your package the usual way.</p>
-<p>First, ensure that the repository is in your local machine</p>
+<p>First, ensure that the repository is in your local machine (we just did it
+on the previous section)</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/&lt;</span><span class="n">username</span><span class="o">&gt;/&lt;</span><span class="n">reponame</span><span class="o">&gt;.</span><span class="n">git</span>
 </pre></div>
 </div>
-<p>Install the requirements. In the scenario of missing libraries, just install
-them using pip.</p>
+<p>Let’s install the requirements. Move to the folder where requirements.txt is
+and install all the required libraries as shown in the statements below. In
+the scenario of missing libraries, just install them using pip.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>   <span class="c1"># Install al the requirements</span>
 </pre></div>
 </div>
@@ -285,7 +293,7 @@ them using pip.</p>
 can start using your package quickly. For example, if you use use
 scikit-learn then include scikit-learn in <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code>.</p>
 </div>
-<p>Go to the directory where the setup.py is. Please not that although <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> is
+<p>Move to the directory where the setup.py is. Please note that although <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> is
 a python script, it is not recommended to install it executing that file with python
 directly. Instead lets use the package manager pip.</p>
 <div class="admonition warning">
@@ -387,23 +395,21 @@ find the following examples in examples/tutorial:</p>
 <div class="section" id="now-it-is-time-to-start-coding">
 <h2>Now it is time to start coding!<a class="headerlink" href="#now-it-is-time-to-start-coding" title="Permalink to this headline">¶</a></h2>
 <p>I would recommend to start with dirty <code class="docutils literal notranslate"><span class="pre">scripts</span></code> in the scripts folder.</p>
-<p>After some time coding, you might identify that all your implementation
+<p>After some time coding, you might identify that part of your implementation
 could be encapsulated in a number of classes and methods. Or that some
 methods are being called very often. In such case, include those methods
-your <code class="docutils literal notranslate"><span class="pre">pkgname</span></code> so you can import them easily and therefore don’t end up
+in your <code class="docutils literal notranslate"><span class="pre">pkgname</span></code> so you can import them easily and therefore don’t end up
 copy/paste code all the time.</p>
-<p>Once you have some results, create an example, document it and keep clean.
+<p>Once you have some results, create an example, document it and keep it clean.
 For example, if you have trained a model and plotted some graphs to
 evaluate its performance, create a file in gallery, document it properly
-within the code and include it in sphinx-gallery. Thus, it will be easier
-to review the code and results, to make minor modifications that will
-be included in the documentation automatically and everything will be also
-ready for your report.</p>
+within the code and include the folder in sphinx-gallery. This will facilitate
+to review the code and results and you will have everything ready to include
+it later in your report!</p>
 <p>Where to store the data?</p>
-<p><strong>Option I:</strong> The dataset is completely different between examples. For example,
-if one example uses microbiology data (microbiology.csv) and the other
-examples users pathology data (pathology.csv). Now we want to create
-just an example for pathology</p>
+<p><strong>Option I:</strong> When the datasets used in the examples are completely different,
+we can include the datasets directly within the example folder as shown in
+the folder structure below.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">examples</span>
 <span class="o">|-</span> <span class="n">tutorial</span>
 <span class="o">|-</span> <span class="n">yourexample</span>
@@ -469,37 +475,29 @@ folder structure and/or approaches feel free to do so!</p>
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../_examples/tutorial/index.html" class="btn btn-neutral float-right" title="The tutorial gallery" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="../index.html" class="btn btn-neutral float-left" title="Welcome to fyp2020-username’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="../_examples/tutorial/index.html" class="btn btn-neutral float-right" title="The tutorial gallery" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../index.html" class="btn btn-neutral float-left" title="Welcome to fyp2020-username’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2021, &lt;Full name&gt;
+        &#169; Copyright 2021, &lt;Full name&gt;.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
