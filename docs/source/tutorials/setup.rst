@@ -8,7 +8,8 @@ A virtual environment is a tool that helps to keep dependencies required by
 different projects separate by creating isolated python virtual environments
 for them. This is one of the most important tools that Python developers use.
 
-In recent versions of python we can use venv
+In recent versions of python (>3) we can use venv. If you have various
+versions of python you might need to use python3 or py instead.
 
 .. code::
 
@@ -125,14 +126,16 @@ It is recommended to install the package in editable (develop) mode. It puts a l
 so that your package is installed, but any changes will immediately take effect.
 This way all your can import your package the usual way.
 
-First, ensure that the repository is in your local machine
+First, ensure that the repository is in your local machine (we just did it
+on the previous section)
 
 .. code::
 
   git clone https://github.com/<username>/<reponame>.git
 
-Install the requirements. In the scenario of missing libraries, just install
-them using pip.
+Let's install the requirements. Move to the folder where requirements.txt is
+and install all the required libraries as shown in the statements below. In
+the scenario of missing libraries, just install them using pip.
 
 .. code::
 
@@ -142,7 +145,7 @@ them using pip.
    can start using your package quickly. For example, if you use use
    scikit-learn then include scikit-learn in ``requirements.txt``.
 
-Go to the directory where the setup.py is. Please not that although ``setup.py`` is
+Move to the directory where the setup.py is. Please note that although ``setup.py`` is
 a python script, it is not recommended to install it executing that file with python
 directly. Instead lets use the package manager pip.
 
@@ -267,26 +270,24 @@ Now it is time to start coding!
 
 I would recommend to start with dirty ``scripts`` in the scripts folder.
 
-After some time coding, you might identify that all your implementation
+After some time coding, you might identify that part of your implementation
 could be encapsulated in a number of classes and methods. Or that some
 methods are being called very often. In such case, include those methods
-your ``pkgname`` so you can import them easily and therefore don't end up
+in your ``pkgname`` so you can import them easily and therefore don't end up
 copy/paste code all the time.
 
-Once you have some results, create an example, document it and keep clean.
+Once you have some results, create an example, document it and keep it clean.
 For example, if you have trained a model and plotted some graphs to
 evaluate its performance, create a file in gallery, document it properly
-within the code and include it in sphinx-gallery. Thus, it will be easier
-to review the code and results, to make minor modifications that will
-be included in the documentation automatically and everything will be also
-ready for your report.
+within the code and include the folder in sphinx-gallery. This will facilitate
+to review the code and results and you will have everything ready to include
+it later in your report!
 
 Where to store the data?
 
-**Option I:** The dataset is completely different between examples. For example,
-if one example uses microbiology data (microbiology.csv) and the other
-examples users pathology data (pathology.csv). Now we want to create
-just an example for pathology
+**Option I:** When the datasets used in the examples are completely different,
+we can include the datasets directly within the example folder as shown in
+the folder structure below.
 
 .. code-block::
 
