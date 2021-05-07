@@ -22,5 +22,6 @@ install:
 # command to run tests
 script:
   - pytest
+  - pytest --cov=pkgname tests
 after_success:
   - codecov
