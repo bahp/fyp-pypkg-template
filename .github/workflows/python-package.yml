@@ -21,7 +21,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
+        os: [ubuntu-latest, macos-latest]
         python-version: [3.9]
 
     steps:
@@ -34,6 +34,7 @@ jobs:
     # .. todo: Check if requirements.txt exists
     #          if ( -f requirements.txt ); then xxxxxx; fi
     #          works for ubuntu, mac, breaks for windows
+    #.         windows-latess takes to long - removed
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
