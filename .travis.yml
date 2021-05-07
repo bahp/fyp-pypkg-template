@@ -11,11 +11,16 @@ language: python
 
 python:
   - "3.9"
+env:
+  - CODECOV_TOKEN='8e6f4379-569f-4285-93c4-4cecb1594b72'
 # command to install dependencies
 install:
   - python -m pip install -r requirements.txt
-  - python -m pip install .
+  - pip install pytest-cov codecov
   - python -m pip install pytest
+  - python -m pip install .
 # command to run tests
 script:
   - pytest
+after_success:
+  - codecov
