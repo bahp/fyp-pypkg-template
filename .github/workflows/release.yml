@@ -31,11 +31,13 @@ jobs:
       uses: actions/create-release@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        VERSION: 
       with:
         tag_name: ${{ github.run_number }}
         release_name: Release ${{ github.run_number }}
         #tag_name: ${{ github.run_number }}
-        
+    - name: Print version
+      run: echo ${{ steps.extract_version.outputs.version }}
     - name: Upload release asset
       uses: actions/upload-release-asset@v1
       env:
