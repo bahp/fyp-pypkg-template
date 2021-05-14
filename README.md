@@ -3,6 +3,7 @@
 
 [![Actions Status](https://github.com/bahp/fyp-pypkg-template/workflows/Python%20package/badge.svg)](https://github.com/bahp/fyp-pypkg-template/actions)
 [![Documentation Status](https://readthedocs.org/projects/fyp-pypkg-template/badge/?version=latest)](https://fyp-pypkg-template.readthedocs.io/en/latest/?badge=latest)
+[![codecov](https://codecov.io/gh/bahp/fyp-pypkg-template/branch/main/graph/badge.svg?token=LM76XXPHTX)](https://codecov.io/gh/bahp/fyp-pypkg-template)
 
 [url-documentation]: https://bahp.github.io/fyp-pypkg-template/
 [url-installation]: https://bahp.github.io/fyp-pypkg-template/
