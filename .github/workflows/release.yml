@@ -32,8 +32,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: ${{ github.event.release.tag_name }}
-        release_name: Release ${{ github.event.release.tag_name }}
+        tag_name: ${{ github.run_number }}
+        release_name: Release ${{ github.run_number }}
         #tag_name: ${{ github.run_number }}
         
     - name: Upload release asset
@@ -44,7 +44,7 @@ jobs:
         upload_url: ${{ steps.create-new-release.outputs.upload_url }}
         asset_path: ./dist/pkgname-0.0.1.tar.gz
         #asset_name: pkgname-v${{ github.run_number }}.tar.gz
-        asset_name: pkgname-v${{ github.event.release.tag_name }}
+        asset_name: pkgname-v0.0.${{ github.run_number }}
         asset_content_type: application/gzip
     
   #release-wheel:
