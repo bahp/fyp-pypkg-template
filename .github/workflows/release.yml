@@ -25,16 +25,19 @@ jobs:
     #  with:
     #    name: static-site
     #    path: ./dist/
-   
+ 
     - name: Create GitHub release
       id: create-new-release
       uses: actions/create-release@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        VERSION: 
+        VERSION: $(python setup.py --version)
       with:
-        tag_name: ${{ github.run_number }}
-        release_name: Release ${{ github.run_number }}
+        tag_name: ${{ VERSION }}
+        release_name: Release v${{ VERSION }}
+      
+        #tag_name: ${{ github.run_number }}
+        #release_name: Release ${{ github.run_number }}
         #tag_name: ${{ github.run_number }}
     - name: Print version
       run: echo ${{ steps.extract_version.outputs.version }}
@@ -44,9 +47,9 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create-new-release.outputs.upload_url }}
-        asset_path: ./dist/pkgname-0.0.1.tar.gz
+        asset_path: ./dist/pkgname-${{ VERSION }}.tar.gz
         #asset_name: pkgname-v${{ github.run_number }}.tar.gz
-        asset_name: pkgname-v0.0.${{ github.run_number }}
+        asset_name: pkgname-${{ VERSION }}
         asset_content_type: application/gzip
     
   #release-wheel:
