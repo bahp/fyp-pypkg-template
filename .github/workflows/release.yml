@@ -39,9 +39,9 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create-new-release.outputs.upload_url }}
-        asset_path: ./dist/*
-        asset_name: site-v${{ github.run_number }}.zip
-        asset_content_type: application/zip   
+        asset_path: ./dist/pkgname-0.0.1.tar.gz
+        asset_name: pkgname-v${{ github.run_number }}.tar.gz
+        asset_content_type: application/gzip
     
    
   #release-wheel:
