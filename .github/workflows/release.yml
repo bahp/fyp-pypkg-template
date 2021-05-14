@@ -19,7 +19,7 @@ jobs:
     - name: Build 
         python setup.py sdist bdist_wheel
     #    twine upload dist/*
-    - name: Publish
+    # - name: Publish
     #  env:
     #    TWINE_USERNAME: __token__
     #    TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
