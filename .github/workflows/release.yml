@@ -5,9 +5,9 @@ on:
   #  types: [created]   # Default
   #  types: [published] # Recommended
   push:
-    branches: [ main ]  # Exclude develop!
+    branches: [ main, develop ]  # Exclude develop!
   pull_request:
-    branches: [ main ]  # Exclude develop!
+    branches: [ main, develop ]  # Exclude develop!
 
 jobs:
 
@@ -36,7 +36,7 @@ jobs:
         echo "VERSION=$(python setup.py --version)" >> $GITHUB_ENV
  
     - name: Create GitHub release
-      id: create-new-release
+      id: create-release
       uses: actions/create-release@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -50,7 +50,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        upload_url: ${{ steps.create-new-release.outputs.upload_url }}
+        upload_url: ${{ steps.create-release.outputs.upload_url }}
         asset_path: ./dist/${{ env.FULLNAME }}.tar.gz
         asset_name: ${{ env.FULLNAME }}
         asset_content_type: application/gzip
